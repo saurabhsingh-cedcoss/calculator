@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>calculator</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='calculator.css'>
+</head>
+
+<body class="con">
+    <div class="container-fluid ">
+        <div class="calculator">
+
+
+            <input type="text" class="display " id="result" value="" />
+            <span id="oper" class="oper"></span>
+            <div class="calculator-keys">
+                <button type="button" value="+" onclick="operation('+')">+</button>
+                <button type="button" value="-" onclick="operation('-')">-</button>
+                <button type="button" value="*" onclick="operation('*')">&times;</button>
+                <button type="button" value="/" onclick="operation('/')">&divide;</button>
+                <button type="button" value="8" onclick="calculate(8)">8</button>
+                <button type="button" value="9" onclick="calculate(9)">9</button>
+                <button type="button" value="5" onclick="calculate(5)">5</button>
+                <button type="button" value="6" onclick="calculate(6)">6</button>
+                <button type="button" value="7" onclick="calculate(7)">7</button>
+                <button type="button" value="2" onclick="calculate(2)">2</button>
+                <button type="button" value="3" onclick="calculate(3)">3</button>
+                <button type="button" value="4" onclick="calculate(4)">4</button>
+                <button type="button" value="0" onclick="calculate(0)">0</button>
+                <button type="button" value="1" onclick="calculate(1)">1</button>
+                <button type="button" value="." onclick="calculate('.')">.</button>
+                <button type="button" class="all-clear" onclick="clea()">AC</button>
+                <button type="button" class="all-clear" onclick="back()">back</button>
+                <button type="button" class="equal-sign" onclick="operation('=')" value="=">=</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    // initialize displayval variable to empty to store the concated input value and previousval to 0 to perform first operation
+    var displayVal = " ";
+    var previousVal = 0;
+
+    // initialize operator value to + for first operation and default
+    var opt = '+';
+    var result;
+    // to concat the given input value and store it on the click of number button
+    function calculate(value) {
+        displayVal += value;
+        document.getElementById('result').value = displayVal;
+    }
+    // to perform operation on the click of operator and display result
+    function operation(operator) {
+
+        document.getElementById('oper').innerHTML = operator;
+        console.log(previousVal);
+        if (opt == '+') { var reducer = (previousVal, displayVal) => previousVal + displayVal; }
+        else if (opt == '-') { var reducer = (previousVal, displayVal) => previousVal - displayVal; }
+        else if (opt == '*') { var reducer = (previousVal, displayVal) => previousVal * displayVal; }
+        else if (opt == '/') { var reducer = (previousVal, displayVal) => previousVal / displayVal; }
+        else if (opt == '=') { var reducer = (previousVal, displayVal) => previousVal + " "; }
+        result = reducer((+previousVal), (+displayVal));
+        document.getElementById('result').value = result;
+        previousVal = result;
+        opt = operator;
+        displayVal = " ";
+    }
+    // to clear the screen on button click.
+    function clea() {
+        document.getElementById('result').value = '  ';
+        document.getElementById('oper').innerHTML = '  ';
+        displayVal = " ";
+        result = 0;
+        previousVal = " ";
+        opt = '+';
+
+    }
+    // backspace for input value
+    function back() {
+        var value = document.getElementById("result").value;
+        document.getElementById("result").value = value.substr(0, value.length - 1);
+        displayVal = value.substr(0, value.length - 1);
+    }
+
+</script>
+</body>
+
+</html>
