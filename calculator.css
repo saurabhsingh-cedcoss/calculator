@@ -3,22 +3,17 @@
   box-sizing: border-box;
 }
 
-  .con{
-        background-image: url('f3.jpg');
-        background-attachment: fixed;
-     
-        background-size: cover;
-    }
+.con{
+  background-image: url('f3.jpg');
+  background-attachment: fixed;
+ background-size: cover; }
   
-  
-   .display{
+ .display{
         background-color: rgb(188, 226, 226);
         width: 84%;
         height: 100px;
         background: none;
-        /* color: rgba(8, 61, 50, 0.473); */
         color: rgb(0 56 44 / 80%);
-        /* border: 1px solid white; */
         border: none;
         border-radius: 2px;
         font-size: 4.5rem;
@@ -32,49 +27,32 @@
     top: 56%;
     left: 25%;
     transform: translate(-50%, -50%);
-    /* box-shadow: 8px 8px 8px rgb(80, 105, 105); */
     width: 34%;
     border:none ;
     
 }
-/* .calculator:hover{
-  top: 54%;
-  box-shadow: 28px 31px 25px rgb(80, 105, 105);
-  transition: 2s;
-  
-} */
+
 .oper{
   font-size: 70px;
   text-shadow: 16px 13px 8px rgb(27 19 37);
-
 }
  
-
-  button {  
+button {  
     height: 2.8rem;
     width: 29%;
     margin: 6px 5px;
-    /* box-shadow: 9px 5px 8px rgb(80, 105, 105); */
-    /* background-color: rgb(220, 241, 241); */
     background: none;
     font-size: 1.4rem;
-     /* border: 1px solid rgb(135, 155, 155); */
      border: none;
     border-radius: 28px;    
-    /* color:rgb(76, 155, 163); */
     color: rgb(0 56 44);
-
     outline: none;
     text-shadow:16px 3px 3px rgb(80 105 105 / 56%);
   }
 
   button:hover{
-    /* background-color:rgba(5, 65, 71, 0.993);
-    color: white;
-    font-size: 1.4rem; */
     animation: shake 0.5s;
     color: black;
-    /* font-size: 200%; */
     animation-iteration-count: infinite;
   }
   @keyframes shake {
@@ -95,30 +73,18 @@
     transform: translatey(5px) translateX(5px);
 
   }
-   .all-clear{
-
-      /* background-color: rgb(144, 212, 144); */
-
-   }
   .equal-sign {
    width: 90%;
-   /* color:rgb(209, 240, 241); */
    color: red;
    justify-content: center;
-   /* background-color: rgb(5, 0, 0); */
   font-size: 50px;
   }
 
   .calculator-keys {
       width: 100%;
-    /* background-color: rgba(215, 245, 243, 0.466); */
-    /* border: 1px solid  rgba(130, 158, 158); */
     border:none ;
    padding: 0px 14px;
- 
-
-    
-  }
+   }
   @media (min-width: 330px) and (max-width: 552px){
     .calculator {
          left: 51%;
@@ -132,8 +98,7 @@
   }
   @media (min-width: 552px) and (max-width: 768px){
     .calculator {
-        
-        background: none;
+         background: none;
         position: absolute;
         top: 52%;
         left: 51%;
@@ -141,22 +106,21 @@
         width: 80%;
       }
 
-  button {  
+   button {  
     height: 7vh;
     width: 22%;
-   
-  }
+    }
+
   .calculator-keys {
-    width: 100%!important;
+   width: 100%!important;
   background-color: rgba(215, 245, 243, 0.466);
   border: 1px solid  rgba(130, 158, 158);
- padding: 24px;
+  padding: 24px;
   
 }
   }
   @media (min-width: 768px) and (max-width: 991px){
     .calculator {
-        
         background: none;
         position: absolute;
         top: 52%;
